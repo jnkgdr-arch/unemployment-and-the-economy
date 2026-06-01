@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unemployment, Demographics & Inflation</title>
+    <meta
+      name="description"
+      content="A chart-heavy economics briefing about how unemployment impacts workers, families, prices, businesses, and the broader economy."
+    />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Unemployment and the economy home">
+          <span class="brand-mark">UE</span>
+          <span>Unemployment & the Economy</span>
+        </a>
+        <div class="nav-links">
+          <a href="#rate">Rate</a>
+          <a href="#inflation">Inflation</a>
+          <a href="#demographics">Demographics</a>
+          <a href="#duration">Duration</a>
+        </div>
+      </nav>
+
+      <section class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Based on “Unemployment: Demographics, Duration & Price Inflation”</p>
+          <h1>How unemployment ripples through the economy</h1>
+          <p class="lede">
+            A data-rich visual story connecting joblessness, demographic inequality,
+            education, unemployment duration, consumer demand, and price inflation.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#dashboard">Explore the dashboard</a>
+            <a class="button secondary" href="#takeaways">Read key takeaways</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="February 2025 summary statistics">
+          <div class="metric highlight">
+            <span class="metric-label">Feb. 2025 unemployment</span>
+            <strong>4.1%</strong>
+            <span>Stable near the 4.0–4.2% range seen in May 2024.</span>
+          </div>
+          <div class="metric-row">
+            <div class="metric">
+              <span class="metric-label">CPI-U</span>
+              <strong>319.082</strong>
+              <span>Unadjusted index level</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">12-month CPI</span>
+              <strong>+2.8%</strong>
+              <span>Prices still rising unevenly</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main id="dashboard">
+      <section class="section intro" id="takeaways">
+        <div>
+          <p class="eyebrow">Executive summary</p>
+          <h2>Stable headline rates can hide unequal labor-market risk.</h2>
+        </div>
+        <div class="takeaway-grid">
+          <article>
+            <span class="pill">Demand shock</span>
+            <h3>Job losses reduce spending</h3>
+            <p>
+              When workers lose income, household demand falls. Businesses then face
+              lower sales, cut production, and may lay off more workers, deepening a downturn.
+            </p>
+          </article>
+          <article>
+            <span class="pill">Skills mismatch</span>
+            <h3>Education changes exposure</h3>
+            <p>
+              People without a high school diploma repeatedly show the highest unemployment,
+              while bachelor’s degree holders show the lowest rates across the series.
+            </p>
+          </article>
+          <article>
+            <span class="pill">Purchasing power</span>
+            <h3>Inflation shifts winners and losers</h3>
+            <p>
+              Inflation hurts cash holders, fixed-income households, and workers whose wages lag;
+              fixed-rate borrowers and asset owners may benefit as dollars lose value.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split" id="rate">
+        <div class="copy-panel">
+          <p class="eyebrow">Part 1 · The unemployment rate</p>
+          <h2>February 2025 showed stability, not equality.</h2>
+          <p>
+            The overall unemployment rate was 4.1% in February 2025. But demographic rates
+            ranged from 3.8% for White workers and adult women to 6.0% for Black workers,
+            5.2% for Hispanic workers, and 12.9% for teenagers.
+          </p>
+          <p>
+            Official unemployment also excludes discouraged workers who are not actively searching,
+            making underemployment and hidden unemployment important context for interpreting the rate.
+          </p>
+        </div>
+        <div class="chart-card tall">
+          <div class="chart-heading">
+            <h3>February 2025 unemployment snapshot</h3>
+            <span>Percent unemployed</span>
+          </div>
+          <canvas id="febSnapshotChart" aria-label="February 2025 unemployment by group" role="img"></canvas>
+        </div>
+      </section>
+
+      <section class="section" id="demographics">
+        <div class="section-heading">
+          <p class="eyebrow">Part 3 · Labor-force groups</p>
+          <h2>Teenagers face the highest unemployment in every cycle.</h2>
+          <p>
+            During the Great Recession, unemployment peaked at 9.8% for adult men, 8.0% for
+            adult women, and 25.9% for teenagers in 2010. The paper’s table includes annual data
+            through 2023 plus monthly entries for 2023 and January–November 2024, so the main
+            line graph now follows the table row-by-row instead of replacing those months with a
+            single 2024 year-to-date average.
+          </p>
+        </div>
+        <div class="chart-stack">
+          <div class="chart-card wide">
+            <div class="chart-heading">
+              <h3>Civilian unemployment by age and sex, 2000–Nov. 2024</h3>
+              <span>Annual rows through 2023, then every listed 2023 and 2024 month</span>
+            </div>
+            <canvas id="groupTrendChart" aria-label="Unemployment trend by age and sex" role="img"></canvas>
+          </div>
+          <div class="chart-card">
+            <div class="chart-heading">
+              <h3>2024 monthly detail</h3>
+              <span>January–November 2024 unemployment rate (%)</span>
+            </div>
+            <canvas id="groupMonthly2024Chart" aria-label="Monthly 2024 unemployment by age and sex" role="img"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split reverse" id="education">
+        <div class="chart-card tall">
+          <div class="chart-heading">
+            <h3>Education and job security</h3>
+            <span>Annual rate; 2024 is YTD average</span>
+          </div>
+          <canvas id="educationChart" aria-label="Unemployment trend by educational attainment" role="img"></canvas>
+        </div>
+        <div class="copy-panel">
+          <p class="eyebrow">Education gap</p>
+          <h2>More education consistently correlates with lower unemployment.</h2>
+          <p>
+            In downturns, all education groups are affected, but not equally. Workers without a high
+            school diploma reached 14.9% unemployment in 2010 and 11.7% in 2020. Bachelor’s degree
+            holders peaked far lower at 4.7% in 2010 and 4.8% in 2020. The 2024 point is
+            averaged from the monthly rows provided in the paper; the bachelor’s series uses
+            January–October because November was blank in the supplied table.
+          </p>
+          <div class="stat-stack">
+            <div><strong>14.9%</strong><span>2010 rate without a high school diploma</span></div>
+            <div><strong>4.7%</strong><span>2010 rate with bachelor’s degree or higher</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="duration">
+        <div class="section-heading">
+          <p class="eyebrow">Duration of unemployment</p>
+          <h2>Long-term unemployment is where recessions leave scars.</h2>
+          <p>
+            The count of workers unemployed for 27 weeks or more surged to 6.415 million in 2010.
+            Long spells can reduce callbacks, weaken skills, strain families, and make reemployment harder.
+          </p>
+        </div>
+        <div class="duration-grid">
+          <div class="chart-card wide">
+            <div class="chart-heading">
+              <h3>Unemployment duration, 2000–2024 YTD</h3>
+              <span>Thousands; 2024 is Jan.–Nov. average</span>
+            </div>
+            <canvas id="durationChart" aria-label="Unemployment duration over time" role="img"></canvas>
+          </div>
+          <aside class="insight-card">
+            <h3>What the duration data shows</h3>
+            <ul>
+              <li>Short spells rise quickly when layoffs accelerate.</li>
+              <li>Long-term unemployment peaks later as weak demand persists.</li>
+              <li>Extended joblessness adds financial stress and psychological costs for families.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="inflation">
+        <div class="section-heading">
+          <p class="eyebrow">Part 2 · Price inflation</p>
+          <h2>Inflation slowed in February 2025, but household pain was uneven.</h2>
+          <p>
+            CPI-U rose 0.2% in February 2025 after a 0.5% increase in January, while the 12-month
+            change was 2.8%. Motor vehicle insurance and food proteins rose sharply, while fuel oil
+            and energy commodities declined.
+          </p>
+        </div>
+        <div class="inflation-grid">
+          <div class="chart-card">
+            <div class="chart-heading">
+              <h3>Monthly inflation cooled</h3>
+              <span>Seasonally adjusted CPI-U monthly change</span>
+            </div>
+            <canvas id="monthlyInflationChart" aria-label="January and February 2025 inflation" role="img"></canvas>
+          </div>
+          <div class="chart-card">
+            <div class="chart-heading">
+              <h3>Price changes by category</h3>
+              <span>Feb. 2024 to Feb. 2025 unadjusted change</span>
+            </div>
+            <canvas id="categoryInflationChart" aria-label="Price changes by category" role="img"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="section mechanism">
+        <div class="section-heading">
+          <p class="eyebrow">Economic transmission</p>
+          <h2>From job loss to macroeconomic instability</h2>
+        </div>
+        <div class="flow" aria-label="How unemployment affects the economy">
+          <div><strong>1</strong><span>Layoffs or skill mismatch</span></div>
+          <div><strong>2</strong><span>Lower household income</span></div>
+          <div><strong>3</strong><span>Reduced consumer spending</span></div>
+          <div><strong>4</strong><span>Lower business revenue</span></div>
+          <div><strong>5</strong><span>More cuts, stress, and instability</span></div>
+        </div>
+      </section>
+
+      <section class="section sources">
+        <p class="eyebrow">Sources discussed in the paper</p>
+        <h2>Research foundation</h2>
+        <p>
+          This site visualizes the paper’s cited Bureau of Labor Statistics employment and CPI releases,
+          Shapiro et al.’s <em>Principles of Economics 3E</em> chapters on unemployment and inflation,
+          and research on families, callback rates, teen unemployment, skills, and demographic outcomes.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Unemployment: Demographics, Duration & Price Inflation · Interactive economics website</p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
