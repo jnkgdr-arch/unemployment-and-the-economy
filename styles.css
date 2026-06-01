@@ -186,7 +186,6 @@ p { color: var(--muted); }
 .copy-panel { display: flex; flex-direction: column; justify-content: center; }
 .copy-panel p { font-size: 1.03rem; }
 
-.chart-stack { display: grid; gap: 1.25rem; }
 .chart-card { padding: 1.1rem; min-height: 390px; }
 .chart-card.tall { min-height: 500px; }
 .chart-card.wide { min-height: 520px; }

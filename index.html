@@ -124,27 +124,16 @@
           <h2>Teenagers face the highest unemployment in every cycle.</h2>
           <p>
             During the Great Recession, unemployment peaked at 9.8% for adult men, 8.0% for
-            adult women, and 25.9% for teenagers in 2010. The paper’s table includes annual data
-            through 2023 plus monthly entries for 2023 and January–November 2024, so the main
-            line graph now follows the table row-by-row instead of replacing those months with a
-            single 2024 year-to-date average.
+            adult women, and 25.9% for teenagers in 2010. Teen unemployment remains much more
+            volatile because young workers often have less experience and weaker attachment to employers.
           </p>
         </div>
-        <div class="chart-stack">
-          <div class="chart-card wide">
-            <div class="chart-heading">
-              <h3>Civilian unemployment by age and sex, 2000–Nov. 2024</h3>
-              <span>Annual rows through 2023, then every listed 2023 and 2024 month</span>
-            </div>
-            <canvas id="groupTrendChart" aria-label="Unemployment trend by age and sex" role="img"></canvas>
+        <div class="chart-card wide">
+          <div class="chart-heading">
+            <h3>Civilian unemployment by age and sex, 2000–2024</h3>
+            <span>Annual unemployment rate (%)</span>
           </div>
-          <div class="chart-card">
-            <div class="chart-heading">
-              <h3>2024 monthly detail</h3>
-              <span>January–November 2024 unemployment rate (%)</span>
-            </div>
-            <canvas id="groupMonthly2024Chart" aria-label="Monthly 2024 unemployment by age and sex" role="img"></canvas>
-          </div>
+          <canvas id="groupTrendChart" aria-label="Unemployment trend by age and sex" role="img"></canvas>
         </div>
       </section>
 
@@ -152,7 +141,7 @@
         <div class="chart-card tall">
           <div class="chart-heading">
             <h3>Education and job security</h3>
-            <span>Annual rate; 2024 is YTD average</span>
+            <span>Annual unemployment rate (%)</span>
           </div>
           <canvas id="educationChart" aria-label="Unemployment trend by educational attainment" role="img"></canvas>
         </div>
@@ -162,9 +151,7 @@
           <p>
             In downturns, all education groups are affected, but not equally. Workers without a high
             school diploma reached 14.9% unemployment in 2010 and 11.7% in 2020. Bachelor’s degree
-            holders peaked far lower at 4.7% in 2010 and 4.8% in 2020. The 2024 point is
-            averaged from the monthly rows provided in the paper; the bachelor’s series uses
-            January–October because November was blank in the supplied table.
+            holders peaked far lower at 4.7% in 2010 and 4.8% in 2020.
           </p>
           <div class="stat-stack">
             <div><strong>14.9%</strong><span>2010 rate without a high school diploma</span></div>
@@ -185,8 +172,8 @@
         <div class="duration-grid">
           <div class="chart-card wide">
             <div class="chart-heading">
-              <h3>Unemployment duration, 2000–2024 YTD</h3>
-              <span>Thousands; 2024 is Jan.–Nov. average</span>
+              <h3>Unemployment duration, 2000–2024</h3>
+              <span>Thousands of unemployed workers</span>
             </div>
             <canvas id="durationChart" aria-label="Unemployment duration over time" role="img"></canvas>
           </div>

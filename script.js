@@ -23,51 +23,27 @@ Chart.defaults.plugins.tooltip.padding = 12;
 const years = [
   2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009,
   2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
-  2020, 2021, 2022, 2023, '2024 YTD',
+  2020, 2021, 2022, 2023,
 ];
 
-const annualGroupLabels = years.slice(0, -1);
-const monthly2023Labels = ['2023 Jan.', '2023 Feb.', '2023 Mar.', '2023 Apr.', '2023 May', '2023 June', '2023 July', '2023 Aug.', '2023 Sept.', '2023 Oct.', '2023 Nov.', '2023 Dec.'];
-const monthly2024Labels = ['2024 Jan.', '2024 Feb.', '2024 Mar.', '2024 Apr.', '2024 May', '2024 June', '2024 July', '2024 Aug.', '2024 Sept.', '2024 Oct.', '2024 Nov.'];
-const groupLabels = [...annualGroupLabels, ...monthly2023Labels, ...monthly2024Labels];
-const months2024 = monthly2024Labels.map((label) => label.replace('2024 ', ''));
-
-const annualGroupData = {
+const groupData = {
   men: [3.3, 4.2, 5.3, 5.6, 5.0, 4.4, 4.0, 4.1, 5.4, 9.6, 9.8, 8.7, 7.5, 7.0, 5.7, 4.9, 4.5, 4.0, 3.6, 3.4, 7.4, 5.2, 3.4, 3.5],
   women: [3.6, 4.1, 5.1, 5.1, 4.9, 4.6, 4.1, 4.0, 4.9, 7.5, 8.0, 7.9, 7.3, 6.5, 5.6, 4.8, 4.4, 4.0, 3.5, 3.3, 8.0, 5.0, 3.3, 3.2],
   teens: [13.1, 14.7, 16.5, 17.5, 17.0, 16.6, 15.4, 15.7, 18.7, 24.3, 25.9, 24.4, 24.0, 22.9, 19.6, 16.9, 15.7, 14.0, 12.9, 12.7, 17.9, 11.7, 10.8, 11.2],
 };
 
-const groupMonthly2023Data = {
-  men: [3.2, 3.3, 3.4, 3.3, 3.5, 3.4, 3.4, 3.7, 3.8, 3.7, 3.7, 3.5],
-  women: [3.1, 3.3, 3.2, 3.1, 3.3, 3.1, 3.1, 3.2, 3.1, 3.2, 3.1, 3.3],
-  teens: [10.5, 11.1, 9.9, 9.3, 10.3, 11.2, 11.3, 12.3, 11.8, 13.1, 11.4, 11.9],
-};
-
-const groupMonthly2024Data = {
-  men: [3.6, 3.5, 3.3, 3.6, 3.8, 3.8, 4.0, 4.0, 3.7, 3.9, 3.9],
-  women: [3.2, 3.5, 3.6, 3.5, 3.4, 3.7, 3.8, 3.7, 3.6, 3.6, 3.9],
-  teens: [10.6, 12.5, 12.6, 11.7, 12.3, 12.1, 12.4, 14.1, 14.3, 13.8, 13.2],
-};
-
-const groupData = {
-  men: [...annualGroupData.men, ...groupMonthly2023Data.men, ...groupMonthly2024Data.men],
-  women: [...annualGroupData.women, ...groupMonthly2023Data.women, ...groupMonthly2024Data.women],
-  teens: [...annualGroupData.teens, ...groupMonthly2023Data.teens, ...groupMonthly2024Data.teens],
-};
-
 const educationData = {
-  noDiploma: [6.3, 7.2, 8.4, 8.8, 8.5, 7.6, 6.8, 7.1, 9.0, 14.6, 14.9, 14.1, 12.4, 11.0, 9.0, 8.0, 7.4, 6.5, 5.6, 5.4, 11.7, 8.3, 5.5, 5.6, 6.2],
-  highSchool: [3.4, 4.2, 5.3, 5.5, 5.0, 4.7, 4.3, 4.4, 5.7, 9.7, 10.3, 9.4, 8.3, 7.5, 6.0, 5.4, 5.2, 4.6, 4.1, 3.7, 9.0, 6.2, 4.0, 3.9, 4.2],
-  someCollege: [2.7, 3.3, 4.5, 4.8, 4.2, 3.9, 3.6, 3.6, 4.6, 8.0, 8.4, 8.0, 7.1, 6.4, 5.4, 4.5, 4.1, 3.8, 3.3, 3.0, 7.8, 5.1, 3.1, 3.0, 3.4],
-  bachelors: [1.7, 2.3, 2.9, 3.1, 2.7, 2.3, 2.0, 2.0, 2.6, 4.6, 4.7, 4.3, 4.0, 3.7, 3.2, 2.6, 2.5, 2.3, 2.1, 2.1, 4.8, 3.1, 2.0, 2.1, 2.3],
+  noDiploma: [6.3, 7.2, 8.4, 8.8, 8.5, 7.6, 6.8, 7.1, 9.0, 14.6, 14.9, 14.1, 12.4, 11.0, 9.0, 8.0, 7.4, 6.5, 5.6, 5.4, 11.7, 8.3, 5.5, 5.6],
+  highSchool: [3.4, 4.2, 5.3, 5.5, 5.0, 4.7, 4.3, 4.4, 5.7, 9.7, 10.3, 9.4, 8.3, 7.5, 6.0, 5.4, 5.2, 4.6, 4.1, 3.7, 9.0, 6.2, 4.0, 3.9],
+  someCollege: [2.7, 3.3, 4.5, 4.8, 4.2, 3.9, 3.6, 3.6, 4.6, 8.0, 8.4, 8.0, 7.1, 6.4, 5.4, 4.5, 4.1, 3.8, 3.3, 3.0, 7.8, 5.1, 3.1, 3.0],
+  bachelors: [1.7, 2.3, 2.9, 3.1, 2.7, 2.3, 2.0, 2.0, 2.6, 4.6, 4.7, 4.3, 4.0, 3.7, 3.2, 2.6, 2.5, 2.3, 2.1, 2.1, 4.8, 3.1, 2.0, 2.1],
 };
 
 const durationData = {
-  short: [2558, 2853, 2893, 2785, 2696, 2667, 2614, 2542, 2932, 3165, 2771, 2677, 2644, 2584, 2471, 2399, 2362, 2270, 2170, 2086, 3708, 2140, 2216, 2112, 2240],
-  mid: [1815, 2196, 2580, 2612, 2382, 2304, 2121, 2232, 2804, 3828, 3267, 2993, 2866, 2759, 2432, 2302, 2226, 2008, 1876, 1789, 4728, 1981, 1711, 1866, 2005],
-  longish: [669, 951, 1369, 1442, 1293, 1130, 1031, 1061, 1427, 2775, 2371, 2061, 1859, 1807, 1497, 1267, 1158, 1017, 917, 860, 2516, 1164, 756, 925, 1052],
-  long: [649, 801, 1535, 1936, 1779, 1490, 1235, 1243, 1761, 4496, 6415, 6016, 5136, 4310, 3218, 2328, 2005, 1687, 1350, 1266, 1995, 3337, 1314, 1177, 1437],
+  short: [2558, 2853, 2893, 2785, 2696, 2667, 2614, 2542, 2932, 3165, 2771, 2677, 2644, 2584, 2471, 2399, 2362, 2270, 2170, 2086, 3708, 2140, 2216, 2112],
+  mid: [1815, 2196, 2580, 2612, 2382, 2304, 2121, 2232, 2804, 3828, 3267, 2993, 2866, 2759, 2432, 2302, 2226, 2008, 1876, 1789, 4728, 1981, 1711, 1866],
+  longish: [669, 951, 1369, 1442, 1293, 1130, 1031, 1061, 1427, 2775, 2371, 2061, 1859, 1807, 1497, 1267, 1158, 1017, 917, 860, 2516, 1164, 756, 925],
+  long: [649, 801, 1535, 1936, 1779, 1490, 1235, 1243, 1761, 4496, 6415, 6016, 5136, 4310, 3218, 2328, 2005, 1687, 1350, 1266, 1995, 3337, 1314, 1177],
 };
 
 function lineDataset(label, data, color, extra = {}) {
@@ -84,10 +60,10 @@ function lineDataset(label, data, color, extra = {}) {
   };
 }
 
-function makeLineChart(id, datasets, yTitle, stacked = false, labels = years) {
+function makeLineChart(id, datasets, yTitle, stacked = false) {
   return new Chart(document.getElementById(id), {
     type: 'line',
-    data: { labels, datasets },
+    data: { labels: years, datasets },
     options: {
       responsive: true,
       maintainAspectRatio: false,
@@ -135,13 +111,7 @@ makeLineChart('groupTrendChart', [
   lineDataset('Men 20 years and over', groupData.men, colors.blue),
   lineDataset('Women 20 years and over', groupData.women, colors.cyan),
   lineDataset('Both sexes 16–19', groupData.teens, colors.red),
-], 'Unemployment rate', false, groupLabels);
-
-makeLineChart('groupMonthly2024Chart', [
-  lineDataset('Men 20 years and over', groupMonthly2024Data.men, colors.blue),
-  lineDataset('Women 20 years and over', groupMonthly2024Data.women, colors.cyan),
-  lineDataset('Both sexes 16–19', groupMonthly2024Data.teens, colors.red),
-], 'Unemployment rate', false, months2024);
+], 'Unemployment rate');
 
 makeLineChart('educationChart', [
   lineDataset('Less than high school diploma', educationData.noDiploma, colors.red),
