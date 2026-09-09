@@ -14,11 +14,17 @@ const colors = {
 Chart.defaults.color = colors.muted;
 Chart.defaults.borderColor = colors.grid;
 Chart.defaults.font.family = 'Inter, ui-sans-serif, system-ui, sans-serif';
+Chart.defaults.font.size = 11;
 Chart.defaults.plugins.legend.labels.usePointStyle = true;
+Chart.defaults.plugins.legend.labels.font = { size: 10 };
+Chart.defaults.plugins.legend.labels.padding = 12;
+Chart.defaults.plugins.legend.labels.boxWidth = 8;
 Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(8, 17, 31, 0.94)';
 Chart.defaults.plugins.tooltip.borderColor = 'rgba(255, 255, 255, 0.16)';
 Chart.defaults.plugins.tooltip.borderWidth = 1;
-Chart.defaults.plugins.tooltip.padding = 12;
+Chart.defaults.plugins.tooltip.titleFont = { size: 11 };
+Chart.defaults.plugins.tooltip.bodyFont = { size: 10 };
+Chart.defaults.plugins.tooltip.padding = 8;
 
 const years = [
   2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009,
