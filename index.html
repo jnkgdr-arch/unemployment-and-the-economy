@@ -19,10 +19,13 @@
           <span>Unemployment & the Economy</span>
         </a>
         <div class="nav-links">
-          <a href="#rate">Rate</a>
-          <a href="#inflation">Inflation</a>
+          <a href="#takeaways">Overview</a>
+          <a href="#rate">Unemployment</a>
           <a href="#demographics">Demographics</a>
+          <a href="#education">Education</a>
           <a href="#duration">Duration</a>
+          <a href="#inflation">Inflation</a>
+          <a href="#sources">Sources</a>
         </div>
       </nav>
 
@@ -146,7 +149,8 @@
             <canvas id="groupMonthly2024Chart" aria-label="Monthly 2024 unemployment by age and sex" role="img"></canvas>
           </div>
         </div>
-        <div class="data-card">
+        <details class="data-card data-accordion">
+          <summary><span>View source data</span><small>Civilian Unemployment 2000–Present by Percentage</small></summary>
           <div class="chart-heading">
             <h3>Civilian Unemployment 2000–Present by Percentage</h3>
             <span>Source table used by the line graph above</span>
@@ -220,7 +224,7 @@
               </table>
             </div>
           </div>
-        </div>
+        </details>
       </section>
 
       <section class="section split reverse" id="education">
@@ -247,7 +251,8 @@
             <div><strong>4.7%</strong><span>2010 rate with bachelor’s degree or higher</span></div>
           </div>
         </div>
-        <div class="data-card">
+        <details class="data-card data-accordion">
+          <summary><span>View source data</span><small>Percentage of Educational Attainment 25 and over, 2000–Present</small></summary>
           <div class="chart-heading">
             <h3>Percentage of Educational Attainment 25 and over, 2000–Present</h3>
             <span>Source table used by the education graph above</span>
@@ -321,7 +326,7 @@
               </table>
             </div>
           </div>
-        </div>
+        </details>
       </section>
 
       <section class="section" id="duration">
@@ -352,7 +357,8 @@
             </ul>
           </aside>
         </div>
-        <div class="data-card">
+        <details class="data-card data-accordion">
+          <summary><span>View source data</span><small>Duration of Employment 2000–Present</small></summary>
           <div class="chart-heading">
             <h3>Duration of Employment 2000–Present</h3>
             <span>Source table used by the duration graph above</span>
@@ -425,7 +431,7 @@
               </table>
             </div>
           </div>
-        </div>
+        </details>
       </section>
 
       <section class="section" id="inflation">
@@ -470,14 +476,17 @@
         </div>
       </section>
 
-      <section class="section sources">
+      <section class="section sources" id="sources">
         <p class="eyebrow">Sources discussed in the paper</p>
         <h2>Research foundation</h2>
-        <p>
-          This site visualizes the paper’s cited Bureau of Labor Statistics employment and CPI releases,
-          Shapiro et al.’s <em>Principles of Economics 3E</em> chapters on unemployment and inflation,
-          and research on families, callback rates, teen unemployment, skills, and demographic outcomes.
-        </p>
+        <details class="references-accordion">
+          <summary>View references +</summary>
+          <p>
+            This site visualizes the paper’s cited Bureau of Labor Statistics employment and CPI releases,
+            Shapiro et al.’s <em>Principles of Economics 3E</em> chapters on unemployment and inflation,
+            and research on families, callback rates, teen unemployment, skills, and demographic outcomes.
+          </p>
+        </details>
       </section>
     </main>
 
